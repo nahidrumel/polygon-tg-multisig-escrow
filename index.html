@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polygon TG Multisig Escrow</title>
     <style>
-      /* এটা হলো CSS (ডিজাইন) */
+      /* Global Theme Configuration */
       body {
         font-family: Arial, sans-serif;
         background-color: #1a1a1a;
@@ -13,26 +14,41 @@
       }
       .wallet-card {
         border: 2px solid #8247e5;
-        padding: 20px;
+        padding: 30px;
         border-radius: 10px;
         display: inline-block;
         margin-top: 50px;
+        max-width: 400px;
+      }
+
+      /* Input Component Styles */
+      .input-field {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        margin: 15px auto;
+        border: 1px solid #8247e5;
+        background-color: #2b2b2b;
+        color: white;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      /* Reusable Button System (DRY Principle) */
+      .btn {
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+        font-weight: bold;
       }
       .btn-connect {
         background-color: #8247e5;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
       }
       .btn-approve {
         background-color: #28a745;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
       }
     </style>
   </head>
@@ -40,8 +56,20 @@
     <div class="wallet-card">
       <h2>Polygon TG Multisig Escrow Wallet 🛡️</h2>
       <p>Status: <span style="color: red">Disconnected</span></p>
-      <button class="btn-connect">Connect Wallet</button>
-      <button class="btn-approve">Approve Transaction</button>
+
+      <input
+        type="text"
+        class="input-field"
+        placeholder="Receiver Address (0x...)"
+      />
+      <input
+        type="number"
+        class="input-field"
+        placeholder="Token Amount (POL/USDT)"
+      />
+
+      <button class="btn btn-connect">Connect Wallet</button>
+      <button class="btn btn-approve">Approve Transaction</button>
     </div>
   </body>
 </html>
